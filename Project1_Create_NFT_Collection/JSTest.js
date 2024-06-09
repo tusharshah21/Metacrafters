@@ -26,13 +26,14 @@ function mintNFT (name, description, owner) {
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
-    nfts.forEach((nft, index) => {
-        console.log(`NFT ${index + 1}`);
-        console.log(`Name: ${nft.name}`);
-        console.log(`Description: ${nft.description}`);
-        console.log(`Owner: ${nft.owner}`);
+    for (let index = 0; index < nfts.length; index++) {
+        const nft = nfts[index];
+        console.log("NFT " + (index + 1));
+        console.log("Name: " + nft.name);
+        console.log("Description: " + nft.description);
+        console.log("Owner: " + nft.owner);
         console.log('---------------------');
-    });
+    }
 }
 
 // print the total number of NFTs we have minted to the console
@@ -46,4 +47,4 @@ mintNFT("Digital Art", "A piece of modern digital art", "Bob");
 mintNFT("Virtual Land", "A piece of virtual real estate", "Charlie");
 
 listNFTs();
-console.log(`Total NFTs: ${getTotalSupply()}`);
+console.log("Total NFTs: "+getTotalSupply());
